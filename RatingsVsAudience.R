@@ -1,0 +1,17 @@
+#Reading the Data
+movies  <- read.csv("Dataset01.csv")
+head(movies)
+colnames(movies) <- c("Film", "Genre", "CriticRating", "AudienceRating", "BudgetMillions", "Year")
+head(movies)
+
+#Converting year from numerical to factor
+factor(movies$Year)
+movies$Year <- factor(movies$Year)
+
+summary(movies)
+
+#Aesthetics
+library(ggplot2)
+
+ggplot(data=movies, aes(x=CriticRating, y=AudienceRating)) + 
+  geom_point()
