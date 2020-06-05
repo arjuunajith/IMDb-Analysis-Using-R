@@ -13,5 +13,17 @@ summary(movies)
 #Aesthetics
 library(ggplot2)
 
-ggplot(data=movies, aes(x=CriticRating, y=AudienceRating)) + 
+ggplot(data=movies, aes(x=CriticRating, y=AudienceRating, 
+                        colour=Genre, size=BudgetMillions)) + 
   geom_point()
+
+#Plotting with Layers
+
+p <- ggplot(data=movies, aes(x=CriticRating, y=AudienceRating, 
+                             colour=Genre, size=BudgetMillions))
+
+p + geom_point()
+
+p + geom_line() + geom_point()
+
+
